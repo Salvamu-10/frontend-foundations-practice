@@ -3,9 +3,244 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkout</title>
+    <meta name="description" content="Finaliza tu compra en nuestra tienda online." />
+    <title>Finalizar compra | Mi Tienda</title>
   </head>
+
   <body>
-    <!-- Construye aquí la pantalla completa. -->
+    <!-- CABECERA DE LA TIENDA -->
+    <header>
+      <h1>Mi Tienda</h1>
+
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Finalizar compra</h2>
+
+      <!-- PROGRESO DEL PROCESO -->
+      <nav aria-label="Progreso de compra">
+        <ol>
+          <li>
+            <a href="carrito.html">Carrito</a>
+          </li>
+          <li>
+            <strong aria-current="step">Envío</strong>
+          </li>
+          <li>Pago</li>
+        </ol>
+      </nav>
+
+      <!-- RESUMEN DE PRODUCTOS -->
+      <section>
+        <h2>Resumen de productos</h2>
+
+        <ul>
+          <li>
+            <article>
+              <h3>Teclado mecánico</h3>
+              <p>Precio: 75,00 €</p>
+              <p>Cantidad: 1 unidad</p>
+            </article>
+          </li>
+
+          <li>
+            <article>
+              <h3>Ratón inalámbrico</h3>
+              <p>Precio: 35,00 €</p>
+              <p>Cantidad: 2 unidades</p>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <!-- DIRECCIÓN DE ENVÍO -->
+      <section>
+        <h2>Dirección de envío</h2>
+
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Datos personales</legend>
+
+            <p>
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required autocomplete="given-name" />
+            </p>
+
+            <p>
+              <label for="apellidos">Apellidos:</label>
+              <input
+                type="text"
+                id="apellidos"
+                name="apellidos"
+                required
+                autocomplete="family-name"
+              />
+            </p>
+
+            <p>
+              <label for="email">Correo electrónico:</label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </p>
+
+            <p>
+              <label for="telefono">Teléfono:</label>
+              <input type="tel" id="telefono" name="telefono" required autocomplete="tel" />
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Dirección</legend>
+
+            <p>
+              <label for="direccion">Calle y número:</label>
+              <input
+                type="text"
+                id="direccion"
+                name="direccion"
+                required
+                autocomplete="street-address"
+              />
+            </p>
+
+            <p>
+              <label for="codigo-postal">Código postal:</label>
+              <input
+                type="text"
+                id="codigo-postal"
+                name="codigo-postal"
+                required
+                pattern="[0-9]{5}"
+                maxlength="5"
+                inputmode="numeric"
+                autocomplete="postal-code"
+              />
+              <small>Introduce un código postal de 5 dígitos.</small>
+            </p>
+
+            <p>
+              <label for="ciudad">Ciudad:</label>
+              <input type="text" id="ciudad" name="ciudad" required autocomplete="address-level2" />
+            </p>
+
+            <p>
+              <label for="pais">País:</label>
+              <select id="pais" name="pais" required autocomplete="country-name">
+                <option value="">Selecciona un país</option>
+                <option value="ES">España</option>
+                <option value="FR">Francia</option>
+                <option value="DE">Alemania</option>
+                <option value="IT">Italia</option>
+                <option value="PT">Portugal</option>
+              </select>
+            </p>
+          </fieldset>
+
+          <!-- MÉTODO DE ENVÍO -->
+          <fieldset>
+            <legend>Método de envío</legend>
+
+            <p>
+              <input type="radio" id="envio-estandar" name="envio" value="estandar" required />
+              <label for="envio-estandar"> Envío estándar (3-5 días) - 4,99 € </label>
+            </p>
+
+            <p>
+              <input type="radio" id="envio-express" name="envio" value="express" />
+              <label for="envio-express"> Envío express (24-48 horas) - 9,99 € </label>
+            </p>
+          </fieldset>
+
+          <!-- RESUMEN ECONÓMICO -->
+          <section>
+            <h2>Resumen económico</h2>
+
+            <dl>
+              <dt>Subtotal de productos:</dt>
+              <dd>145,00 €</dd>
+
+              <dt>Envío estándar:</dt>
+              <dd>4,99 €</dd>
+
+              <dt>Impuestos incluidos:</dt>
+              <dd>31,50 €</dd>
+
+              <dt><strong>Total de la compra:</strong></dt>
+              <dd><strong>149,99 €</strong></dd>
+            </dl>
+          </section>
+
+          <!-- CONDICIONES DE COMPRA -->
+          <fieldset>
+            <legend>Condiciones de compra</legend>
+
+            <p>
+              <input
+                type="checkbox"
+                id="condiciones"
+                name="condiciones"
+                value="aceptadas"
+                required
+              />
+              <label for="condiciones">
+                He leído y acepto los
+                <a href="condiciones.html"> términos y condiciones de compra </a>.
+              </label>
+            </p>
+
+            <p>
+              <input type="checkbox" id="privacidad" name="privacidad" value="aceptada" required />
+              <label for="privacidad">
+                He leído la
+                <a href="privacidad.html"> política de privacidad </a>.
+              </label>
+            </p>
+          </fieldset>
+
+          <!-- BOTÓN FINAL -->
+          <p>
+            <button type="submit">Confirmar pedido y continuar al pago</button>
+          </p>
+        </form>
+      </section>
+
+      <!-- AYUDA -->
+      <aside>
+        <h2>¿Necesitas ayuda?</h2>
+
+        <p>
+          Si tienes algún problema durante el proceso de compra, puedes contactar con nuestro
+          equipo.
+        </p>
+
+        <p>
+          <a href="mailto:soporte@mitienda.example"> Contactar con atención al cliente </a>
+        </p>
+
+        <p>
+          Teléfono de atención:
+          <a href="tel:+34900111222"> 900 111 222 </a>
+        </p>
+      </aside>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+      <p>&copy; 2026 Mi Tienda. Todos los derechos reservados.</p>
+
+      <nav aria-label="Información legal">
+        <ul>
+          <li><a href="privacidad.html">Privacidad</a></li>
+          <li><a href="condiciones.html">Condiciones de compra</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>

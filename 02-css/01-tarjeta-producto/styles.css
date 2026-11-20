@@ -1,1 +1,105 @@
-/* Escribe aquí tus estilos. */
+/* 1. VARIABLES GLOBALES */
+
+:root {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-text: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-background: #f3f4f6;
+  --color-white: #ffffff;
+  --color-border: #e5e7eb;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+}
+
+/* 2. ESTILOS GENERALES */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: var(--spacing-lg);
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* 3. TARJETA DE PRODUCTO */
+
+.product-card {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* 4. IMAGEN DEL PRODUCTO */
+
+.product-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 5. CONTENIDO DE LA TARJETA */
+
+.product-card__body {
+  padding: var(--spacing-md);
+}
+
+.product-card__category {
+  margin: 0 0 var(--spacing-xs);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.product-card h1 {
+  margin: 0 0 var(--spacing-sm);
+  font-size: 1.5rem;
+}
+
+.product-card__body > p:not(.product-card__category) {
+  line-height: 1.5;
+}
+
+.product-card__price {
+  margin: var(--spacing-md) 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 6. BOTÓN DE COMPRA */
+
+.product-card button {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: none;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.product-card button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.product-card button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+}

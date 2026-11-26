@@ -3,12 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Facturas</title>
+    <meta name="description" content="Listado de facturas de clientes." />
+    <title>Listado de facturas</title>
   </head>
+
   <body>
+    <header>
+      <h1>Gestión de facturas</h1>
+      <p>Relación de facturas emitidas durante 2026.</p>
+    </header>
+
     <main>
-      <h1>Facturas del mes</h1>
-      <!-- Construye aquí la tabla. -->
+      <section>
+        <h2>Facturas emitidas</h2>
+
+        <table>
+          <caption>
+            Listado de facturas emitidas durante el año 2026. Importes expresados en euros (€).
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Número</th>
+              <th scope="col">Cliente</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Base imponible (€)</th>
+              <th scope="col">Impuestos (€)</th>
+              <th scope="col">Total (€)</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th scope="row">FAC-001</th>
+              <td>Empresa A</td>
+              <td>
+                <time datetime="2026-01-15">15/01/2026</time>
+              </td>
+              <td>Pagada</td>
+              <td>1.000,00 €</td>
+              <td>210,00 €</td>
+              <td>1.210,00 €</td>
+            </tr>
+
+            <tr>
+              <th scope="row">FAC-002</th>
+              <td>Empresa B</td>
+              <td>
+                <time datetime="2026-02-03">03/02/2026</time>
+              </td>
+              <td>Pendiente</td>
+              <td>500,00 €</td>
+              <td>105,00 €</td>
+              <td>605,00 €</td>
+            </tr>
+
+            <tr>
+              <th scope="row">FAC-003</th>
+              <td>Empresa C</td>
+              <td>
+                <time datetime="2026-03-10">10/03/2026</time>
+              </td>
+              <td>Pagada</td>
+              <td>2.000,00 €</td>
+              <td>420,00 €</td>
+              <td>2.420,00 €</td>
+            </tr>
+
+            <tr>
+              <th scope="row">FAC-004</th>
+              <td>Empresa D</td>
+              <td>
+                <time datetime="2026-04-22">22/04/2026</time>
+              </td>
+              <td>Vencida</td>
+              <td>750,00 €</td>
+              <td>157,50 €</td>
+              <td>907,50 €</td>
+            </tr>
+
+            <tr>
+              <th scope="row">FAC-005</th>
+              <td>Empresa E</td>
+              <td>
+                <time datetime="2026-05-08">08/05/2026</time>
+              </td>
+              <td>Pagada</td>
+              <td>1.500,00 €</td>
+              <td>315,00 €</td>
+              <td>1.815,00 €</td>
+            </tr>
+
+            <tr>
+              <th scope="row">FAC-006</th>
+              <td>Empresa F</td>
+              <td>
+                <time datetime="2026-06-17">17/06/2026</time>
+              </td>
+              <td>Pendiente</td>
+              <td>800,00 €</td>
+              <td>168,00 €</td>
+              <td>968,00 €</td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="4">TOTAL FACTURADO</th>
+              <td>6.550,00 €</td>
+              <td>1.375,50 €</td>
+              <td>7.925,50 €</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
     </main>
+
+    <footer>
+      <p>&copy; 2026 Gestión de facturas.</p>
+    </footer>
   </body>
 </html>

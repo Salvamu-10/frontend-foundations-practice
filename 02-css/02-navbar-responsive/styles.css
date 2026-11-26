@@ -1,1 +1,125 @@
-/* Escribe aquí tus estilos. */
+/* 1. VARIABLES GLOBALES */
+
+:root {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-text: #1f2937;
+  --color-background: #ffffff;
+  --color-border: #e5e7eb;
+
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  --radius-md: 0.5rem;
+}
+
+/* 2. ESTILOS GENERALES */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* 3. HEADER PRINCIPAL */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* 4. LOGO */
+
+.brand {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* 5. NAVEGACIÓN */
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list a {
+  color: var(--color-text);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover {
+  color: var(--color-primary);
+}
+
+.nav-list a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* 6. CTA */
+
+.cta {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.cta:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.cta:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* 7. DISEÑO RESPONSIVE */
+
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--spacing-md);
+  }
+
+  .brand {
+    text-align: center;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .cta {
+    align-self: center;
+  }
+}

@@ -1,1 +1,178 @@
-/* Escribe aquí tus estilos. */
+/* 1. Variables globales */
+
+:root {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+
+  --color-text: #1f2937;
+  --color-text-secondary: #6b7280;
+
+  --color-border: #d1d5db;
+  --color-background: #f3f4f6;
+  --color-white: #ffffff;
+
+  --color-error: #b91c1c;
+  --color-error-background: #fef2f2;
+
+  --border-radius: 8px;
+}
+
+/* 2. Configuración general */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+main {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* 3. Formulario */
+
+.account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 5%);
+}
+
+.account-form h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* 4. Campos del formulario */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--color-text);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* 5. Estado hover */
+
+.field input:hover:not(:disabled),
+.field select:hover:not(:disabled) {
+  border-color: var(--color-primary);
+}
+
+/* 6. Estado focus-visible */
+
+.field input:focus-visible,
+.field select:focus-visible,
+.account-form button:focus-visible {
+  outline: 3px solid rgb(37 99 235 / 30%);
+  outline-offset: 2px;
+  border-color: var(--color-primary);
+}
+
+/* 7. Estado disabled */
+
+.field input:disabled,
+.field select:disabled {
+  color: #4b5563;
+  background-color: #e5e7eb;
+  border-color: #d1d5db;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* 8. Estado inválido */
+
+/* Navegadores compatibles con :user-invalid */
+
+.field input:user-invalid,
+.field select:user-invalid {
+  border-color: var(--color-error);
+  background-color: var(--color-error-background);
+}
+
+/* Alternativa para navegadores sin soporte de :user-invalid */
+
+@supports not selector(:user-invalid) {
+  .field input:invalid:not(:focus),
+  .field select:invalid:not(:focus) {
+    border-color: var(--color-error);
+  }
+}
+
+/* 9. Texto de ayuda */
+
+.field small {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* 10. Botón */
+
+.account-form button {
+  min-height: 46px;
+  padding: 12px 20px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.account-form button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.account-form button:active {
+  background-color: #1e40af;
+}
+
+/* 11. Adaptación móvil */
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  .account-form {
+    padding: 24px 18px;
+  }
+
+  .account-form h1 {
+    font-size: 21px;
+  }
+}
